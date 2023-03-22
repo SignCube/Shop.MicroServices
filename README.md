@@ -1,2 +1,2 @@
 # Shop.MicroServices
-Shopping Application Based On Microservices
+Shopping Application Based On Microservices Using .Net7
