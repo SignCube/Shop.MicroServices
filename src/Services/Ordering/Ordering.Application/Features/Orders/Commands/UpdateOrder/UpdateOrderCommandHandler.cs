@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MediatR;
-using MediatR.NotificationPublishers;
 using Microsoft.Extensions.Logging;
 using Ordering.Application.Contracts.Persistence;
 using Ordering.Application.Exceptions;

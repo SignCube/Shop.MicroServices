@@ -14,7 +14,7 @@ namespace Ordering.Infrastructure.Persistence
     {
         public static async Task SeedAsync(OrderContext orderContext, ILogger<OrderContextSeed> logger)
         {
-            if(!orderContext.Orders.Any())
+            if (!orderContext.Orders.Any())
             {
                 orderContext.Orders.AddRange(GetPreconfiguredOrders());
                 await orderContext.SaveChangesAsync();
@@ -26,7 +26,7 @@ namespace Ordering.Infrastructure.Persistence
         {
             return new List<Order>
             {
-                new Order() {UserName = "user", FirstName = "user_name", LastName = "user_last", EmailAddress = "ezozkme@gmail.com", AddressLine = "Bahcelievler", Country = "Turkey", TotalPrice = 350 }
+                new Order() {UserName = "swn", FirstName = "Mehmet", LastName = "Ozkaya", EmailAddress = "ezozkme@gmail.com", AddressLine = "Bahcelievler", Country = "Turkey", TotalPrice = 350 }
             };
         }
     }

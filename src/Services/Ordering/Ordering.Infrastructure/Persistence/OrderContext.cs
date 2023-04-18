@@ -11,9 +11,11 @@ namespace Ordering.Infrastructure.Persistence
 {
     public class OrderContext : DbContext
     {
-        public OrderContext(DbContextOptions<OrderContext> options) : base(options) { }
+        public OrderContext(DbContextOptions<OrderContext> options) : base(options)
+        {
+        }
 
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<Order>? Orders { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
