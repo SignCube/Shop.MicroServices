@@ -7,6 +7,7 @@ using Ordering.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Ordering.Application.Contracts.Persistence;
 using Ordering.Infrastructure.Repositories;
+using Ordering.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+app.MigrateDatabase<OrderContext>((context,service)=>
+{
+    var logger = service.GetService<ILogger<OrderContextSeed>>();
+    OrderContextSeed.SeedAsync(context, logger).Wait();
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
